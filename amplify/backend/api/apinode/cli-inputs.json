@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "paths": {
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "apinodelambda",
+      "permissions": {
+        "setting": "protected",
+        "auth": [
+          "create"
+        ],
+        "guest": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
