@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "amplifynodebackend_identitypool_86653531",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "amplif86653531",
     "userPoolName": "amplifynodebackend_userpool_86653531",
     "autoVerifiedAttributes": [
@@ -37,6 +37,24 @@
     "resourceName": "amplifynodebackend",
     "sharedId": "86653531",
     "serviceName": "Cognito",
-    "useDefault": "manual"
+    "useDefault": "default",
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "useEnabledMfas": true,
+    "dependsOn": [],
+    "hostedUI": false,
+    "userPoolGroupList": [],
+    "authProviders": []
   }
 }
